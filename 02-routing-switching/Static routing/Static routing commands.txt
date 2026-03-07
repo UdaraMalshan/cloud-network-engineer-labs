@@ -1,0 +1,62 @@
+
+
+ 01)Router pre-configurations - Interface assigning
+
+
+         R1#conf ter
+         R1(config)#interface g0/0
+         R1(config-if)#ip add 192.168.13.1 255.255.255.0
+         R1(config-if)#no shutdown
+
+
+    Router's all interfaces configure like above.
+
+
+         R1#show ip interface brief  - (show summary of the interface)
+
+
+
+02)Define static route between PC1 & PC4
+
+
+
+    R1 router configurations,
+
+         R1(config)#ip route 192.168.4.0 255.255.255.0 192.168.13.3
+      Or 
+         R1(config)#ip route 192.168.4.0 255.255.255.0 g0/0 (Use R1's exit interface)
+
+
+         R1(config)#show ip route
+
+
+    R3 router configurations,
+
+
+       
+   (PC1 to PC4)
+
+
+         R3(config)#ip route 192.168.4.0 255.255.255.0 192.168.34.4
+
+      Or
+
+         R3(config)#ip route 192.168.4.0 255.255.255.0 g0/1.  (Use R2's exit interface)
+
+
+  
+   (PC4 to PC1)
+
+
+         R3(config)#ip route 192.168.1.0 255.255.255.0 192.168.13.1
+     
+      Or
+
+         R3(config)#ip route 192.168.1.0 255.255.255.0 g0/0.  (Use R2's exit interface)
+        
+         R3(config)#show ip route
+
+
+
+
+ 
