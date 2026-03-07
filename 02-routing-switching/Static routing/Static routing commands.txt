@@ -56,6 +56,10 @@
         
          R3(config)#show ip route
 
+04)Default route configuration
+
+         R1(config)#ip route 0.0.0.0 0.0.0.0 (ISP router address}
+
 
 
 
