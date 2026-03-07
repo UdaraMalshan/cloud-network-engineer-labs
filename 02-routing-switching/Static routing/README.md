@@ -10,11 +10,11 @@ Concepts Practiced:
 
 Commands Used:
 
-ip route {DST IP} {SUBNET MASK} {NEXT HOP ADDRESS}
+- ip route {DST IP} {SUBNET MASK} {NEXT HOP ADDRESS}
 
-show ip route
+- show ip route
 
 Result:
 
-PCs successfully exchanged packets.
+ PCs successfully exchanged packets.
 
