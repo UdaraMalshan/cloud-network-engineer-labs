@@ -1,0 +1,40 @@
+Step 01,
+    
+    Configure Hostnames
+    All routers interface pre configuration
+
+Step 02
+    Configure loopback interface on each router
+
+      R4(config)#interface l0   -----loopback 0 interface 
+      R4(config)#ip add 4.4.4.4 255.255.255.255
+      R4(config)#do show ip interface l0
+        
+Step 03
+    Configure OSPF on each router
+
+      R4(config)#router ospf 4
+      R4(config-router)#network 0.0.0.0 255.255.255.255 area 0
+      R4(config-router)#passive-interface g0/0
+      R4(config-router)#passive-interface l0
+
+--------------------Do the same process to R3,R2,R1------------------------
+
+Step 04
+    Configure R1 as ASBR that advertise a default route into OSPF domain
+
+      R4(config)#router ospf 1
+      R4(config-router)#network 0.0.0.0 255.255.255.255 area 0
+      R4(config-router)#default-information originate
+      R4(config-router)#exit
+
+      R4(config)#ip route 0.0.0.0 0.0.0.0 203.0.113.2
+      R4(config)#exit
+      R4(#show ip protocols
+
+Step 05
+    Check the routing tables of R2,R3,R4
+
+      R1#show ip ospf database
+      R1#show ip ospf neighbors
+      R1#show ip ospf interface
