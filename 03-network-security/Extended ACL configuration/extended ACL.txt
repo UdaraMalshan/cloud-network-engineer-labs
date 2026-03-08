@@ -1,0 +1,7 @@
+1. Configure extended ACLS to fulfill the following network policies:
+
+﻿Hosts in 172.16.2.0/24 can't communicate with PC1.
+
+﻿Hosts in 172.16.1.0/24 can't access the ping service on server1.
+
+﻿Hosts in 172.16.2.0/24 can't access the HTTP or HTTPS services on server2
