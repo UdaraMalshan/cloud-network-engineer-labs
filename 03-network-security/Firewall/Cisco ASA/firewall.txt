@@ -1,9 +1,0 @@
-############ Basic Cisco ASA Configs #######
-
-﻿﻿﻿Draw necessary topology, decorate and comment I
-
-﻿﻿﻿Configure hostname, enable passwords, username and password, clock and date.
-
-﻿﻿﻿Configure IP addresses, names, and security level to the interfaces.
-
-﻿﻿﻿Save and display config 
